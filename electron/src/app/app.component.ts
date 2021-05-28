@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       "hp": this.hp,
       "hc": this.hc,
       "total": this.total
-    }).toPromise()
+    }).toPromise() //.subscribe
       .then(() => {
         this.lister();
       });
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 
   lister() {
     this.http.get("http://localhost:8080/releve")
-      .toPromise()
+      .toPromise() //.subscribe
       .then(data => {
       this.releves = data;
     })
